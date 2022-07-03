@@ -1,4 +1,5 @@
 it('should ', function () {
+    cy.url().should('include', '/inventory')
     cy.get('[data-test^="add-to-cart"]')
         .should('have.length.greaterThan', 0)
         .its('length')

@@ -1,14 +1,14 @@
 describe('example saucedemo app', () => {
 
-    it('displays two todo items by default', () => {
-        cy.get('.inventory_item_name').should('have.length', 6)
-        cy.get('.inventory_item_name')
-            .first().should('have.text', 'Sauce Labs Backpack')
-        cy.get('.inventory_item_name')
-            .last().should('have.text', 'Test.allTheThings() T-Shirt (Red)')
+    it('Check head title and meta tags ', () => {
+        cy.get('head title').should('include.text', 'Swag Labs')
+        cy.get('head meta[name="description"]')
+            .should('have.attr', 'content')
+            .should('contain', 'Sauce Labs Swag Labs app')
     })
 
     it('Checking for duplicates', () => {
+        cy.url().should('include', '/inventory')
         cy.get('.inventory_item_name').should($li => {
             // const names = Cypress._.map($li, ($el) => {
             //     return $el.innerText
@@ -26,6 +26,7 @@ describe('example saucedemo app', () => {
     })
 
     it('check css properties', () => {
+        cy.url().should('include', '/inventory')
         cy.get('.inventory_item_name')
             .should('have.css', 'color', 'rgb(226, 35, 26)')
         cy.get('.inventory_item_name').each($li => {

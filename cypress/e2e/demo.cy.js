@@ -39,10 +39,10 @@ describe('example saucedemo app', () => {
 
     it('Check css properties', () => {
         cy.get(allItems).each($li => {
-            cy.wrap($li).should('have.css', 'color', 'rgb(226, 35, 26)')
+            cy.wrap($li).should('have.css', 'color', 'rgb(24, 88, 58)')
                 .and('have.css', 'font-size', '20px')
-                .and('have.css', 'font-family', 'Roboto, Arial, Helvetica, sans-serif')
-                .and('have.css', 'text-decoration', 'none solid rgb(226, 35, 26)')
+                .and('have.css', 'font-family', '"DM Mono", sans-serif')
+                .and('have.css', 'text-decoration', 'none solid rgb(24, 88, 58)')
         })
     })
 

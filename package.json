@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/boro-mir/cypress-saucedemo-app#readme",
   "devDependencies": {
-    "cypress": "^10.3.0"
+    "cypress": "^13.6.2"
   }
 }
